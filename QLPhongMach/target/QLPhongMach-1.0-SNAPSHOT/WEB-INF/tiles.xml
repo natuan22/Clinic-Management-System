@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache
+Software Foundation//DTD Tiles Configuration 3.0//EN"
+"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+    <definition name="baseLayout" template="/WEB-INF/layout/base.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="header" value="/WEB-INF/layout/header.jsp" />
+        <put-attribute name="content" value="" />
+        <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp" />
+    </definition>
+    
+    <definition name="adminLayout" template="/WEB-INF/layout/base.jsp">
+        <put-attribute name="title" value="" />
+        <put-attribute name="header" value="/WEB-INF/layout/admin/header.jsp" />
+        <put-attribute name="content" value="" />
+        <put-attribute name="footer" value="/WEB-INF/layout/admin/footer.jsp" />
+    </definition>
+    
+    <definition name="pageAdmin" extends="adminLayout">
+        <put-attribute name="title" value="Trang quản trị" />
+        <put-attribute name="content" value="/WEB-INF/jsp/admin.jsp" />
+    </definition>
+    
+    <definition name="stats" extends="adminLayout">
+        <put-attribute name="title" value="Thong ke bao cao" />
+        <put-attribute name="content"
+                       value="/WEB-INF/jsp/stats.jsp" />
+    </definition>
+    
+    <definition name="index" extends="baseLayout">
+        <put-attribute name="title" value="Trang chủ" />
+        <put-attribute name="content" value="/WEB-INF/jsp/index.jsp" />
+    </definition>
+    
+    <definition name="pageBacSi" extends="adminLayout">
+        <put-attribute name="title" value="Bac si" />
+        <put-attribute name="content" value="/WEB-INF/jsp/bacsi.jsp" />
+    </definition>
+    
+    <definition name="khamBenh" extends="adminLayout">
+        <put-attribute name="title" value="Bac si" />
+        <put-attribute name="content" value="/WEB-INF/jsp/khambenh.jsp" />
+    </definition>
+    
+    <definition name="login" extends="baseLayout">
+        <put-attribute name="title" value="Login" />
+        <put-attribute name="content" value="/WEB-INF/jsp/login.jsp" />
+    </definition>
+    
+    <definition name="register" extends="baseLayout">
+        <put-attribute name="title" value="Register" />
+        <put-attribute name="content" value="/WEB-INF/jsp/register.jsp" />
+    </definition>
+    
+    <definition name="dangkykham" extends="baseLayout">
+        <put-attribute name="title" value="Dang ky kham benh" />
+        <put-attribute name="content" value="/WEB-INF/jsp/dangkykham.jsp" />
+    </definition>
+    
+    <definition name="thuocs" extends="adminLayout">
+        <put-attribute name="title" value="Quan ly thuoc" />
+        <put-attribute name="content" value="/WEB-INF/jsp/thuocs.jsp" />
+    </definition>
+    
+    <definition name="pageYTa" extends="adminLayout">
+        <put-attribute name="title" value="Y ta" />
+        <put-attribute name="content" value="/WEB-INF/jsp/yta.jsp" />
+    </definition>
+    
+    <definition name="thanhToanHoaDon" extends="adminLayout">
+        <put-attribute name="title" value="Y ta" />
+        <put-attribute name="content" value="/WEB-INF/jsp/thanh-toan-hoa-don.jsp" />
+    </definition>
+    
+    <definition name="lichkham" extends="baseLayout">
+        <put-attribute name="title" value="Lich su kham benh" />
+        <put-attribute name="content" value="/WEB-INF/jsp/lichkham.jsp" />
+    </definition>
+    
+    <definition name="toathuoc" extends="adminLayout">
+        <put-attribute name="title" value="Toa thuoc" />
+        <put-attribute name="content" value="/WEB-INF/jsp/toathuoc.jsp" />
+    </definition>
+    
+    <definition name="lichSuKhamBenh" extends="adminLayout">
+        <put-attribute name="title" value="Lich su kham benh" />
+        <put-attribute name="content" value="/WEB-INF/jsp/lich-su-kham-benh.jsp" />
+    </definition>
+    
+    <definition name="lichSuKhamBenhToaThuocDetail" extends="adminLayout">
+        <put-attribute name="title" value="Lich su kham benh" />
+        <put-attribute name="content" value="/WEB-INF/jsp/toa-thuoc-detail.jsp" />
+    </definition>
+</tiles-definitions>
