@@ -62,16 +62,3 @@ function deleteCartItem(thuocId) {
         });
     }
 }
-
-function pay() {
-    if (confirm("Ban chac chan thanh toan?") === true) {
-        fetch("/QLPhongMach/api/pay", {
-            method: "post"
-        }).then(function (res) {
-            return res.json();
-        }).then(function (code) {
-            console.info(code);
-            location.reload();
-        });
-    }
-}

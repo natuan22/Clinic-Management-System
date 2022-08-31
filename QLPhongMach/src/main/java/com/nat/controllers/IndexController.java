@@ -18,6 +18,8 @@ import java.util.List;
 import java.util.Map;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -34,8 +36,12 @@ import org.springframework.web.bind.annotation.RequestParam;
  */
 @Controller
 @ControllerAdvice
+@PropertySource("classpath:messages.properties")
 public class IndexController {
 
+    @Autowired
+    private Environment env;
+    
     @Autowired
     private DanhMucThuocService danhMucThuocService;
 
@@ -74,6 +80,7 @@ public class IndexController {
     @PostMapping("/dang-ky-kham")
     public String dangKyKhamBenh(Model model, @ModelAttribute(value = "lichKhamBenh") LichKhamBenh lichKhamBenh,
             BindingResult rs, Principal principal) {
+        String errMsg = "";
         List<User> users = this.userService.getUsers(principal.getName());
         User user = users.get(0);
         lichKhamBenh.setUserId(user);
@@ -82,10 +89,19 @@ public class IndexController {
             return "dangkykham";
         }
 
-        if (this.lichKhamBenhService.addLichKhamBenh(lichKhamBenh) == true) {
-            return "redirect:/";
+        if (this.lichKhamBenhService.countLichKhamBenh(lichKhamBenh.getNgayKham()) 
+                < Integer.parseInt(env.getProperty("lichKhamBenh.soLuong"))) { //Nhan toi da 40 lich kham 1 ngay
+            if (this.lichKhamBenhService.addLichKhamBenh(lichKhamBenh) == true) {
+                return "redirect:/";
+            } else {
+                errMsg = "Đã có lỗi xảy ra!";
+            }
+        } else {
+            errMsg = "So luong lich kham benh trong ngay da du. Xin chon ngay khac";
         }
-
+        
+        model.addAttribute("errMsg", errMsg);
+        
         return "dangkykham";
     }
 
@@ -94,7 +110,7 @@ public class IndexController {
         List<User> users = this.userService.getUsers(principal.getName());
         User user = users.get(0);
         model.addAttribute("userId", user.getId());
-        
+
         return "lichkham";
     }
 }

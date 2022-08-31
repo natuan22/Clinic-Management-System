@@ -13,4 +13,5 @@ import java.util.List;
 public interface StatisticRepository {
     List<Object[]> thuocStats(int quarter, int y);
     List<Object[]> revenueStats(int year);
+    List<Object[]> countBenhNhan(int year);
 }

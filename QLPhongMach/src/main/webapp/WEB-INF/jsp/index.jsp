@@ -16,15 +16,15 @@
     </div>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="https://res.cloudinary.com/dhldfozup/image/upload/v1659082336/QLPhongMach/Banner/4a7baa095089a1d7f898_ruvzy2.jpg" 
+            <img src="https://res.cloudinary.com/dhldfozup/image/upload/v1661938673/QLPhongMach/Banner/Untitled-1_o2qbkl.png" 
                  class="d-block w-100" alt="img1">
         </div>
         <div class="carousel-item">
-            <img src="https://res.cloudinary.com/dhldfozup/image/upload/v1659082390/QLPhongMach/Banner/5df7b1824b02ba5ce313_grt6gv.jpg" 
+            <img src="https://res.cloudinary.com/dhldfozup/image/upload/v1661938851/QLPhongMach/Banner/Untitled-2_glkrrq.png" 
                  class="d-block w-100" alt="img2">
         </div>
         <div class="carousel-item">
-            <img src="https://res.cloudinary.com/dhldfozup/image/upload/v1659082430/QLPhongMach/Banner/60ccbd834703b65def12_sbbl90.jpg" 
+            <img src="https://res.cloudinary.com/dhldfozup/image/upload/v1661939167/QLPhongMach/Banner/Untitled-3_lq4jzz.png" 
                  class="d-block w-100" alt="img3">
         </div>
     </div>

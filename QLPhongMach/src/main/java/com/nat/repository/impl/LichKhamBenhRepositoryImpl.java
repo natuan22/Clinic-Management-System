@@ -6,6 +6,7 @@ package com.nat.repository.impl;
 
 import com.nat.pojo.LichKhamBenh;
 import com.nat.repository.LichKhamBenhRepository;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -103,5 +104,20 @@ public class LichKhamBenhRepositoryImpl implements LichKhamBenhRepository {
             ex.printStackTrace();
             return false;
         }
+    }
+
+    @Override
+    public int countLichKhamBenh(Date date) {
+        Session session = this.sessionFactory.getObject().getCurrentSession();
+        CriteriaBuilder b = session.getCriteriaBuilder();
+        CriteriaQuery q = b.createQuery(LichKhamBenh.class);
+        Root root = q.from(LichKhamBenh.class);
+        q.select(root);
+        
+        q.where(b.equal(root.get("ngayKham"), date));
+        q.select(b.count(root.get("id")));
+                
+        Query query = session.createQuery(q);
+        return Integer.parseInt(query.getSingleResult().toString());
     }
 }

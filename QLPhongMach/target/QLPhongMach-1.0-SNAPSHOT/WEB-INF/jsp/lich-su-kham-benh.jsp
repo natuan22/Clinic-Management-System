@@ -4,32 +4,38 @@
     Author     : anhtuan
 --%>
 
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <div class="container" style="margin-top: 20px;">
-    <h1 class="text-danger text-center">LICH SU KHAM BENH</h1>
+    <h1 class="text-danger text-center">LỊCH SỬ KHÁM BỆNH</h1>
 
-    <table class="table">
-        <tr>
-            <th>Ngay kham</th>
-            <th>Trieu chung</th>
-            <th>Ket luan</th>
-            <th>Bac si</th>
-            <th>Toa thuoc</th>
-        </tr>
+    <c:if test="${phieuKhamBenh.size() == 0}">
+        <p><em>BỆNH NHÂN KHÔNG CÓ LỊCH SỬ KHÁM BỆNH NÀO!!!</em></p>
+    </c:if>
 
-        <c:forEach items="${phieuKhamBenh}" var="c">
+    <c:if test="${phieuKhamBenh.size() != 0}">
+        <table class="table">
             <tr>
-                <td>${c.ngayKham}</td>
-                <td>${c.trieuChung}</td>
-                <td>${c.ketLuan}</td>
-                <td>${c.bacSiId.firstName} ${c.bacSiId.lastName}</td>
-                <td>
-                    <a href="<c:url value="/bacsi/lich-su-kham-benh/${userId}/${c.toaThuocId.id}"/>">Chi tiet thuoc</a>
-                <td>
+                <th>Ngày khám</th>
+                <th>Triệu chứng</th>
+                <th>Kêt luận</th>
+                <th>Bác sĩ</th>
+                <th>Toa thuốc</th>
             </tr>
-        </c:forEach>
-    </table>
-    
+
+            <c:forEach items="${phieuKhamBenh}" var="c">
+                <tr>
+                    <td><fmt:formatDate value="${c.ngayKham}" type="date"/></td>
+                    <td>${c.trieuChung}</td>
+                    <td>${c.ketLuan}</td>
+                    <td>${c.bacSiId.firstName} ${c.bacSiId.lastName}</td>
+                    <td>
+                        <a href="<c:url value="/bacsi/lich-su-kham-benh/${userId}/${c.toaThuocId.id}"/>">Chi tiết thuốc</a>
+                    <td>
+                </tr>
+            </c:forEach>
+        </table>
+    </c:if>
 </div>
 

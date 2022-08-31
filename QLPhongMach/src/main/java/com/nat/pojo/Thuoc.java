@@ -23,6 +23,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -61,18 +62,20 @@ public class Thuoc implements Serializable {
     private Date createdDate;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 45)
+    @Size(min = 1, max = 45, message = "{thuoc.ten.lenErr}")
     @Column(name = "ten")
     private String ten;
     @Basic(optional = false)
     @NotNull
     @Column(name = "so_luong")
+    @Min(value = 1, message = "{thuoc.soLuong.minErr}")
     private int soLuong;
     @Basic(optional = false)
-    @NotNull
+    @NotNull(message = "{thuoc.dongia.nullErr}")
     @Column(name = "don_gia")
+    @Min(value = 5000, message = "{thuoc.dongia.minErr}")
     private Long donGia;
-    @Size(max = 255)
+    @Size(max = 255, message = "{thuoc.ghichu.maxErr}")
     @Column(name = "ghi_chu")
     private String ghiChu;
     @JsonIgnore
@@ -81,10 +84,12 @@ public class Thuoc implements Serializable {
     @JsonIgnore
     @JoinColumn(name = "danh_muc_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
+    @NotNull(message = "{thuoc.danhMucThuoc.nullErr}")
     private DanhMucThuoc danhMucId;
     @JsonIgnore
     @JoinColumn(name = "don_vi_tinh_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
+    @NotNull(message = "{thuoc.donViTinh.nullErr}")
     private DonViTinh donViTinhId;
 
     public Thuoc() {

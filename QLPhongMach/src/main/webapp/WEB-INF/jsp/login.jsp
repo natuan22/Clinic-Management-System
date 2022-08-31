@@ -23,16 +23,16 @@
     
     <c:url value="/login" var="action"/>
     <form method="post" action="${action}">
-        <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" class="form-control"/>
+        <div class="form-floating mb-3 mt-3">
+            <input class="form-control" type="text" id="username" name="username" placeholder="username" required/>
+            <label for="username">Tên đăng nhập</label>
         </div>
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" class="form-control"/>
+        <div class="form-floating mb-3 mt-3">
+            <input class="form-control" type="password" id="password" name="password"  placeholder="password" required/>
+            <label for="password">Mật khẩu</label>
         </div>
-        <div class="form-group">
-            <input type="submit" value="Dang nhap" class="btn btn-danger"/>
+        <div class="form-group mb-3 mt-3">
+            <input type="submit" value="Đăng nhập" class="btn btn-danger"/>
         </div>
     </form>
 </div>

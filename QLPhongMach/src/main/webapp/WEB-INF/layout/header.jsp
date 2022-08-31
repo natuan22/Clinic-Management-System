@@ -26,7 +26,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="<c:url value="/dang-ky-kham"/>">Dang ky kham</a>
+                    <a class="nav-link" href="<c:url value="/dang-ky-kham"/>">Đăng ký khám bệnh</a>
                 </li>
 
                 <a class="navbar-brand d-none d-lg-block" href="/QLPhongMach/">
@@ -75,7 +75,7 @@
 
                         <ul class="dropdown-menu" style="width: 359px;" aria-labelledby="navbarDropdown">
                             <li class="nav-item">
-                                <a class="nav-link text-danger" href="<c:url value="/lich-kham"/>">Lịch sử khám bệnh</a>
+                                <a class="nav-link text-danger" href="<c:url value="/lich-kham"/>">Lịch sử đăng ký khám bệnh</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-danger" href="<c:url value="#${pageContext.request.userPrincipal.name}"/>">Chi tiết tài khoản</a>
@@ -88,13 +88,13 @@
 
                             <sec:authorize access="hasRole('ROLE_BACSI')">
                                 <li class="nav-item">
-                                    <a class="nav-link text-danger" href="<c:url value="/bacsi"/>">Page Bac si</a>
+                                    <a class="nav-link text-danger" href="<c:url value="/bacsi"/>">Bác sĩ</a>
                                 </li>
                             </sec:authorize>
 
                             <sec:authorize access="hasRole('ROLE_YTA')">
                                 <li class="nav-item">
-                                    <a class="nav-link text-danger" href="<c:url value="/yta"/>">Page Y ta</a>
+                                    <a class="nav-link text-danger" href="<c:url value="/yta"/>">Y tá</a>
                                 </li>
                             </sec:authorize>
                             <li><hr class="dropdown-divider"></li>
@@ -104,8 +104,6 @@
                         </ul>
                     </li>
                 </sec:authorize>
-
-
             </ul>
         </div>
 

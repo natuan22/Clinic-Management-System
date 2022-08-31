@@ -30,4 +30,9 @@ public class StatisticServiceImpl implements StatisticService {
         return this.statisticRepository.revenueStats(year);
     }
 
+    @Override
+    public List<Object[]> countBenhNhan(int year) {
+        return this.statisticRepository.countBenhNhan(year);
+    }
+
 }

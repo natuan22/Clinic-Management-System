@@ -7,16 +7,14 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<div class="container">
-    <h1>TOA THUOC</h1>
+<div class="container" style="margin-top: 20px;">
+    <h1 class="text-danger text-center">TOA THUỐC</h1>
     <table class="table">
         <tr>
-            <th>Ten</th>
-            <th>Ghi chu</th>
-            <th>So luong</th>
-            
+            <th>Tên</th>
+            <th>Ghi chú</th>
+            <th>Số lượng</th>
         </tr>
-        
         <c:forEach items="${toathuoc}" var="c">
             <tr>
                 <td>${c.thuocId.ten}</td>

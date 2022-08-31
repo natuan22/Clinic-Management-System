@@ -55,8 +55,8 @@
 
         <div class="col-lg-2 col-md-6 col-12 my-4 my-lg-0">
             <h5 class="mb-lg-4 mb-3">Our Clinic</h5>
-            <p><a href="mailto:EnAyTi@company.com">EnAyTi@company.com</a></p>
-            <p>123 Digital Art Street, San Diego, CA 92123</p>
+            <p><a href="mailto:anhtuan222001@gmail.com">anhtuan222001@gmail.com</a></p>
+            <p>Nguyen Thai Son, Go Vap, Ho Chi Minh City</p>
         </div>
         <div class="col-lg-3 col-md-6 col-12 ms-auto">
             <h5 class="mb-lg-4 mb-2">Socials</h5>

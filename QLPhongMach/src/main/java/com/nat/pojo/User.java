@@ -67,40 +67,40 @@ public class User implements Serializable {
     @Column(name = "active")
     private boolean active;
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 50)
+    @NotNull(message = "{user.username.nullErr}")
+    @Size(min = 1, max = 50, message = "{user.username.lenErr}")
     @Column(name = "username")
     private String username;
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 100)
+    @NotNull(message = "{user.password.nullErr}")
+    @Size(min = 1, max = 100, message = "{user.password.lenErr}")
     @Column(name = "password")
     private String password;
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 50)
+    @NotNull(message = "{user.firstName.nullErr}")
+    @Size(min = 1, max = 50, message = "{user.firstName.lenErr}")
     @Column(name = "first_name")
     private String firstName;
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 50)
+    @NotNull(message = "{user.lastName.nullErr}")
+    @Size(min = 1, max = 50, message = "{user.lastName.lenErr}")
     @Column(name = "last_name")
     private String lastName;
     @Basic(optional = false)
-    @NotNull
+    @NotNull(message = "{user.gioiTinh.nullErr}")
     @Size(min = 1, max = 50)
     @Column(name = "gioi_tinh")
     private String gioiTinh;
     // @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Invalid email")//if the field contains email address consider using this annotation to enforce field validation
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 50)
+    @Size(min = 1, max = 50, message = "{user.email.lenErr}")
     @Column(name = "email")
     private String email;
     // @Pattern(regexp="^\\(?(\\d{3})\\)?[- ]?(\\d{3})[- ]?(\\d{4})$", message="Invalid phone/fax format, should be as xxx-xxx-xxxx")//if the field contains phone or fax number consider using this annotation to enforce field validation
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 50)
+    @Size(min = 1, max = 50, message = "{user.phone.lenErr}")
     @Column(name = "phone")
     private String phone;
     @Size(max = 200)

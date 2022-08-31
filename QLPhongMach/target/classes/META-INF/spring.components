@@ -1,4 +1,5 @@
 com.nat.configs.HibernateConfig=org.springframework.stereotype.Component
+com.nat.configs.MailConfig=org.springframework.stereotype.Component
 com.nat.configs.SpringSecurityConfig=org.springframework.stereotype.Component
 com.nat.configs.TilesConfig=org.springframework.stereotype.Component
 com.nat.configs.WebAppContextConfig=org.springframework.stereotype.Component

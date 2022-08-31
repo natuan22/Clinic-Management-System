@@ -6,6 +6,7 @@ package com.nat.service;
 
 import com.nat.pojo.LichKhamBenh;
 import com.nat.pojo.User;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -19,4 +20,5 @@ public interface LichKhamBenhService {
     LichKhamBenh getLichKhamBenhById(int id);
     List<LichKhamBenh> getLichKhamBenhByUser(int id);
     boolean deleteLichKhamBenh(int id);
+    int countLichKhamBenh(Date date);
 }

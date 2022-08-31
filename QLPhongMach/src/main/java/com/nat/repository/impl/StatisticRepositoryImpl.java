@@ -5,6 +5,7 @@
 package com.nat.repository.impl;
 
 import com.nat.pojo.HoaDon;
+import com.nat.pojo.PhieuKhamBenh;
 import com.nat.pojo.Thuoc;
 import com.nat.pojo.ToaThuoc;
 import com.nat.pojo.ToaThuocDetail;
@@ -67,6 +68,24 @@ public class StatisticRepositoryImpl implements StatisticRepository {
         q.multiselect(b.function("MONTH", Integer.class, rHoaDon.get("ngayTao")),
                       b.sum(rHoaDon.get("thanhTien")));
         q.groupBy(b.function("MONTH", Integer.class, rHoaDon.get("ngayTao")));
+
+        Query query = session.createQuery(q);
+        return query.getResultList();
+    }
+
+    @Override
+    public List<Object[]> countBenhNhan(int year) {
+        Session session = this.sessionFactory.getObject().getCurrentSession();
+        CriteriaBuilder b = session.getCriteriaBuilder();
+        CriteriaQuery<Object[]> q = b.createQuery(Object[].class);
+
+        Root rPhieuKhamBenh = q.from(PhieuKhamBenh.class);
+
+        q.where(b.equal(b.function("YEAR", Integer.class, rPhieuKhamBenh.get("ngayKham")), year));
+
+        q.multiselect(b.function("MONTH", Integer.class, rPhieuKhamBenh.get("ngayKham")),
+                      b.count(rPhieuKhamBenh.get("id")));
+        q.groupBy(b.function("MONTH", Integer.class, rPhieuKhamBenh.get("ngayKham")));
 
         Query query = session.createQuery(q);
         return query.getResultList();

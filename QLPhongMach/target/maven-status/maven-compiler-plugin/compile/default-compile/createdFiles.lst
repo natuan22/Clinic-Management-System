@@ -35,8 +35,10 @@ com\nat\repository\HoaDonRepository.class
 com\nat\configs\WebAppContextConfig.class
 com\nat\controllers\ApiThuocController.class
 com\nat\pojo\Thuoc_.class
+com\nat\configs\MailConfig.class
 com\nat\pojo\PhieuKhamBenh.class
 com\nat\controllers\ApiLichKhamBenhController.class
+com\nat\pojo\MyConstants.class
 com\nat\pojo\LichKhamBenh_.class
 com\nat\service\LichKhamBenhService.class
 com\nat\handlers\LogoutHandler.class

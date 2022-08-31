@@ -5,7 +5,6 @@
 package com.nat.controllers;
 
 import com.nat.pojo.Cart;
-import com.nat.pojo.PhieuKhamBenh;
 import com.nat.service.PhieuKhamBenhService;
 import com.nat.utils.Utils;
 import java.util.HashMap;

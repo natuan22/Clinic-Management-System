@@ -5,6 +5,7 @@
 package com.nat.repository;
 
 import com.nat.pojo.LichKhamBenh;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -17,5 +18,6 @@ public interface LichKhamBenhRepository {
     boolean confirmLichKhamBenh(int id);
     LichKhamBenh getLichKhamBenhById(int id);
     List<LichKhamBenh> getLichKhamBenhByUser(int id);
-    boolean deleteLichKhamBenh(int id);;
+    boolean deleteLichKhamBenh(int id);
+    int countLichKhamBenh(Date date);
 }

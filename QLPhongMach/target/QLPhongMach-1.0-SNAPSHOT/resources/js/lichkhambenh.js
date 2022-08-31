@@ -33,14 +33,13 @@ function getLichKhamBenhs(endpoint) {
             for (let i = 0; i < data.length; i++)
                 h += `
                 <tr id="row${data[i].id}">
-                    <td>${data[i].id}</td>
                     <td>${data[i].ngayKham}</td>
                     <td>${data[i].gioKham}</td>
                     <td>${data[i].trieuChung}</td>
                     <td>
                         <div class="spinner-border text-secondary" style="display:none" id="load${data[i].id}"></div>
                         <button class='btn btn-success' 
-                                onclick="confirmLichKhamBenh('${endpoint + "/" + data[i].id}', ${data[i].id}, this)">Xac nhan</button>
+                                onclick="confirmLichKhamBenh('${endpoint + "/" + data[i].id}', ${data[i].id}, this)">Xác nhận</button>
                     </td>
                 </tr>
             `
@@ -64,7 +63,6 @@ function getLichKhamBenhsTrue(endpoint) {
             for (let i = 0; i < data.length; i++)
                 h += `
                 <tr id="row${data[i].id}">
-                    <td>${data[i].id}</td>
                     <td>${data[i].ngayKham}</td>
                     <td>${data[i].gioKham}</td>
                     <td>${data[i].trieuChung}</td>

@@ -5,7 +5,6 @@
 package com.nat.controllers;
 
 import com.nat.service.HoaDonService;
-import com.nat.service.LichKhamBenhService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

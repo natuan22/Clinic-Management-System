@@ -7,6 +7,7 @@ package com.nat.service.impl;
 import com.nat.pojo.LichKhamBenh;
 import com.nat.repository.LichKhamBenhRepository;
 import com.nat.service.LichKhamBenhService;
+import java.util.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -50,5 +51,10 @@ public class LichKhamBenhServiceImpl implements LichKhamBenhService {
     @Override
     public boolean deleteLichKhamBenh(int id) {
         return this.lichKhamBenhRepository.deleteLichKhamBenh(id);
+    }
+
+    @Override
+    public int countLichKhamBenh(Date date) {
+        return this.lichKhamBenhRepository.countLichKhamBenh(date);
     }
 }

@@ -9,7 +9,8 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <div class="container" style="margin-top: 20px;">
-    <h2 class="text-center text-danger">THANH TOAN HOA DON</h2>
+    <h1 class="text-center text-danger">QUẢN LÝ HOÁ ĐƠN</h1>
+    
     <table class="table">
         <tr>
             <th>Ngày tạo</th>
@@ -27,7 +28,7 @@
                 <c:if test="${t.tinhTrang == false}">
                     <td class="text-danger">Chưa thanh toán</td>
 
-                    <td><button class='btn btn-success' onclick="confirmHoaDon('${u}')">Xac nhan</button></td>
+                    <td><button class='btn btn-success' onclick="confirmHoaDon('${u}')">Xác nhận</button></td>
                 </c:if>
 
                 <c:if test="${t.tinhTrang == true}">

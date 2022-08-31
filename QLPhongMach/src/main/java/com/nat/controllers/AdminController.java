@@ -25,42 +25,44 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
+
     @Autowired
     private ThuocService thuocService;
-    
+
     @Autowired
     private StatisticService statisticService;
-    
+
     @GetMapping()
-    public String pageAdmin(Model model) {
-        
+    public String pageAdmin(Model model, @RequestParam(value = "quarter", required = false, defaultValue = "1") int quarter,
+            @RequestParam(value = "year", defaultValue = "2022") int year) {
+        model.addAttribute("thuocStats", this.statisticService.thuocStats(quarter, year));
         return "pageAdmin";
     }
-    
+
     @GetMapping("/thuocs")
     public String list(Model model) {
         model.addAttribute("thuoc", new Thuoc());
         return "thuocs";
     }
-    
+
     @PostMapping("/thuocs")
     public String add(@ModelAttribute(value = "thuoc") @Valid Thuoc t, BindingResult rs) {
-        if (rs.hasErrors())
-            return "thuocs";
-        
-        if (this.thuocService.addThuoc(t) == true)
-            return "redirect:/admin/thuocs";
-        
+        if (!rs.hasErrors()) {
+            if (this.thuocService.addThuoc(t) == true) {
+                return "redirect:/admin/thuocs";
+            }
+        }
+
         return "thuocs";
     }
-    
+
     @GetMapping("/stats")
-    public String stats(Model model, @RequestParam(value = "quarter", required = false, defaultValue = "1") int quarter,
-                                     @RequestParam(value = "year", defaultValue = "2022") int year,
-                                     @RequestParam(value = "year2", defaultValue = "2022") int year2) {
-        model.addAttribute("thuocStats", this.statisticService.thuocStats(quarter, year));
+    public String stats(Model model, @RequestParam(value = "year", defaultValue = "2022") int year,
+            @RequestParam(value = "year2", defaultValue = "2022") int year2) {
+
+        model.addAttribute("countBenhNhan", this.statisticService.countBenhNhan(year));
         model.addAttribute("revenueStats", this.statisticService.revenueStats(year2));
-        
+
         return "stats";
     }
 }

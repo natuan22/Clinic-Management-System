@@ -9,23 +9,23 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <div class="container" style="margin-top: 20px;">
-    <h2 class="text-center text-danger">Lich kham benh</h2>
+    <h1 class="text-center text-danger">LỊCH KHÁM BỆNH</h1>
     
     <table class="table">
         <tr>
-            <th>Id</th>
-            <th>Ngay kham</th>
-            <th>Gio kham</th>
-            <th>Trieu chung</th>
+            <th>Ngày khám</th>
+            <th>Giờ khám</th>
+            <th>Triệu chứng</th>
+            <th>Bệnh nhân</th>
             <th></th>
         </tr>
         <c:forEach items="${lichKhamBenhs}" var="c">
         <tr>
-            <td>${c.id}</td>
             <td><fmt:formatDate value="${c.ngayKham}" type="date"/></td>
             <td><fmt:formatDate value="${c.gioKham}" type="time"  timeStyle="short"/></td>
             <td>${c.trieuChung}</td>
-            <td><a class="btn btn-success" href="<c:url value="/bacsi/kham-benh/${c.id}"/>">Chon</a></td>
+            <td>${c.userId.firstName} ${c.userId.lastName}</td>
+            <td><a class="btn btn-success" href="<c:url value="/bacsi/kham-benh/${c.id}"/>">Khám bệnh</a></td>
         </tr>
         </c:forEach>
     </table>
