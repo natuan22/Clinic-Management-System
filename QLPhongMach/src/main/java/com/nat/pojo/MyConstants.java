@@ -9,13 +9,7 @@ package com.nat.pojo;
  * @author anhtuan
  */
 public class MyConstants {
-    // Replace with your email here:  
     public static final String MY_EMAIL = "anhtuan222001@gmail.com";
 
-    // Replace password!!
     public static final String MY_PASSWORD = "kicsrnqatapolpkc";
-
-    // And receiver!
-    public static final String FRIEND_EMAIL = "beobeo222001@gmail.com";
-
 }

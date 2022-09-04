@@ -97,7 +97,7 @@ public class IndexController {
                 errMsg = "Đã có lỗi xảy ra!";
             }
         } else {
-            errMsg = "So luong lich kham benh trong ngay da du. Xin chon ngay khac";
+            errMsg = "Số lượng lịch khám bệnh trong ngày đã đủ, xin chọn ngày khác";
         }
         
         model.addAttribute("errMsg", errMsg);

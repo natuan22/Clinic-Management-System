@@ -7,7 +7,6 @@ package com.nat.handlers;
 import com.nat.pojo.User;
 import com.nat.service.UserService;
 import java.io.IOException;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

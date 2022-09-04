@@ -5,7 +5,6 @@
 package com.nat.controllers;
 
 import com.nat.pojo.LichKhamBenh;
-import com.nat.pojo.MyConstants;
 import com.nat.service.LichKhamBenhService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
