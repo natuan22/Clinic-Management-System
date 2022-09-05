@@ -89,8 +89,7 @@ public class IndexController {
             return "dangkykham";
         }
 
-        if (this.lichKhamBenhService.countLichKhamBenh(lichKhamBenh.getNgayKham()) 
-                < Integer.parseInt(env.getProperty("lichKhamBenh.soLuong"))) { //Nhan toi da 40 lich kham 1 ngay
+        if (this.lichKhamBenhService.countLichKhamBenh(lichKhamBenh.getNgayKham()) < Integer.parseInt(env.getProperty("lichKhamBenh.soLuong"))) { //Nhan toi da 40 lich kham 1 ngay
             if (this.lichKhamBenhService.addLichKhamBenh(lichKhamBenh) == true) {
                 return "redirect:/";
             } else {
