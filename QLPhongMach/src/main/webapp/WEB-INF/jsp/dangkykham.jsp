@@ -7,16 +7,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <div class="container" style="margin-top: 20px;">
     <h1 class="text-center text-danger">ĐĂNG KÝ KHÁM BỆNH</h1>
-
-    <c:if test="${errMsg != null}">
-        <div class="alert alert-danger">
-            ${errMsg}
-        </div>
-    </c:if>
 
     <c:url value="/dang-ky-kham" var="action"/>
     <form:form method="post" action="${action}" modelAttribute="lichKhamBenh">
@@ -46,3 +41,10 @@
         </sec:authorize>
     </form:form>
 </div>
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+<script>
+    <c:if test="${errMsg != null}">
+        alertify.set('notifier', 'position', 'top-right');
+        alertify.error('${errMsg}');
+    </c:if>
+</script>

@@ -4,7 +4,7 @@
  */
 
 function deleteLichSuKhamBenh(endpoint, id, btn) {
-    if (confirm("Ban chac chan xoa lich kham benh nay khong?") === true) {
+    if (confirm("Bạn có chắc nhắn huỷ lịch khám bệnh này không?") === true) {
         let r = document.getElementById(`row${id}`);
         let load = document.getElementById(`load${id}`);
         load.style.display = "block";
@@ -40,7 +40,7 @@ function getLichSuKhamBenh(endpoint) {
                     <td>${data[i].trieuChung}</td>
                     <td>
                         <div class="spinner-border text-info" style="display:none" id="load${data[i].id}"></div>
-                        <button class="btn btn-danger" onclick="deleteLichSuKhamBenh('${endpoint + "/" + data[i].id}', ${data[i].id}, this)">Xoá</button>
+                        <button class="btn btn-danger" onclick="deleteLichSuKhamBenh('${endpoint + "/" + data[i].id}', ${data[i].id}, this)">Huỷ</button>
                     </td>
                 </tr>
             `

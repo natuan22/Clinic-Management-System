@@ -81,6 +81,7 @@ public class IndexController {
     public String dangKyKhamBenh(Model model, @ModelAttribute(value = "lichKhamBenh") LichKhamBenh lichKhamBenh,
             BindingResult rs, Principal principal) {
         String errMsg = "";
+        String successMsg = "";
         List<User> users = this.userService.getUsers(principal.getName());
         User user = users.get(0);
         lichKhamBenh.setUserId(user);
@@ -91,7 +92,9 @@ public class IndexController {
 
         if (this.lichKhamBenhService.countLichKhamBenh(lichKhamBenh.getNgayKham()) < Integer.parseInt(env.getProperty("lichKhamBenh.soLuong"))) { //Nhan toi da 40 lich kham 1 ngay
             if (this.lichKhamBenhService.addLichKhamBenh(lichKhamBenh) == true) {
-                return "redirect:/";
+                successMsg = "Đã đặt lịch khám thành công. Xin hãy đợi xác nhận từ y tá qua email";
+                model.addAttribute("successMsg", successMsg);
+                return "forward:/";
             } else {
                 errMsg = "Đã có lỗi xảy ra!";
             }

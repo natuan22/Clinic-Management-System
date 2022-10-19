@@ -16,6 +16,7 @@ import org.hibernate.Session;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -29,6 +30,9 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Autowired
     private LocalSessionFactoryBean sessionFactory;
+    
+    @Autowired
+    private BCryptPasswordEncoder passwordEncoder;
 
     @Override
     public boolean addUser(User user) {
@@ -58,4 +62,22 @@ public class UserRepositoryImpl implements UserRepository {
         Query query = session.createQuery(q);
         return query.getResultList();
     }
+
+    @Override
+    public boolean changePass(User user, int id) {
+        Session session = this.sessionFactory.getObject().getCurrentSession();
+        
+        try {
+            User p = session.get(User.class, id);
+            p.setPassword(this.passwordEncoder.encode(user.getPassword()));
+            
+            session.save(p);
+            
+            return true;
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            return false;
+        }
+    }
+
 }

@@ -49,6 +49,7 @@ public class ApiLichKhamBenhController {
     @PostMapping("/lich-kham-benh-false/{lichKhamBenhId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void update(@PathVariable(value = "lichKhamBenhId") int id) {
+        this.lichKhamBenhService.confirmLichKhamBenh(id);
         if (this.lichKhamBenhService.confirmLichKhamBenh(id) == true) {
             LichKhamBenh lichKhamBenh = this.lichKhamBenhService.getLichKhamBenhById(id);
             

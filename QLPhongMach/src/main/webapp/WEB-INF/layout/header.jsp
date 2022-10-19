@@ -40,8 +40,7 @@
                     </a>
                     <ul class="dropdown-menu" style="width: 359px;" aria-labelledby="navbarDropdown">
                         <c:forEach items="${dichVuBenhViens}" var="c">
-                            <c:url value="/" var="cUrl">
-                                <c:param name="dichVuId" value="${c.id}" />
+                            <c:url value="/dichVu/${c.id}" var="cUrl">
                             </c:url>
                             <li class="nav-item">
                                 <a class="nav-link" href="${cUrl}">${c.ten}</a>
@@ -78,7 +77,7 @@
                                 <a class="nav-link text-danger" href="<c:url value="/lich-kham"/>">Lịch sử đăng ký khám bệnh</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-danger" href="<c:url value="#${pageContext.request.userPrincipal.name}"/>">Chi tiết tài khoản</a>
+                                <a class="nav-link text-danger" href="<c:url value="/tai-khoan/mat-khau"/>">Đổi mật khẩu</a>
                             </li>
                             <sec:authorize access="hasRole('ROLE_ADMIN')">
                                 <li class="nav-item">

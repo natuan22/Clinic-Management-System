@@ -24,4 +24,9 @@ public class DichVuBenhVienServiceImpl implements DichVuBenhVienService {
     public List<DichVuBenhVien> getDichVuBenhViens() {
         return this.dichVuBenhVienRepository.getDichVuBenhViens();
     }
+
+    @Override
+    public DichVuBenhVien getDichVuBenhVienById(int id) {
+        return this.dichVuBenhVienRepository.getDichVuBenhVienById(id);
+    }
 }

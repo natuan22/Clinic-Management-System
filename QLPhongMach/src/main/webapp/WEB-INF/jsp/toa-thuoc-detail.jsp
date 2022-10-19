@@ -23,4 +23,12 @@
             </tr>
         </c:forEach>
     </table>
+    
+    <input class="btn btn-danger mb-3" type="button" value="Quay lại" onclick="QuayLai()">
+    
+    <script>
+        function QuayLai() {
+            window.history.back();
+        }
+    </script>
 </div>

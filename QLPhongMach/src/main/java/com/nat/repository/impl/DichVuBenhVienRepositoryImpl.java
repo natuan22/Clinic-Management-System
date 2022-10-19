@@ -31,5 +31,11 @@ public class DichVuBenhVienRepositoryImpl implements DichVuBenhVienRepository {
         
         return q.getResultList();
     }
+
+    @Override
+    public DichVuBenhVien getDichVuBenhVienById(int id) {
+        Session session = this.sessionFactory.getObject().getCurrentSession();
+        return session.get(DichVuBenhVien.class, id);
+    }
     
 }

@@ -3,12 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/JavaScript.js to edit this template
  */
 
-function confirmLichKhamBenh(endpoint, id, btn) {
+async function confirmLichKhamBenh(endpoint, id, btn) {
     let r = document.getElementById(`row${id}`);
     let load = document.getElementById(`load${id}`);
     load.style.display = "block";
     btn.style.display = "none";
-    fetch(endpoint, {
+    await fetch(endpoint, {
         method: 'post'
     }).then(function (res) {
         if (res.status !== 204)
@@ -67,7 +67,7 @@ function getLichKhamBenhsTrue(endpoint) {
                     <td>${data[i].gioKham}</td>
                     <td>${data[i].trieuChung}</td>
                 </tr>
-            `
+            `;
             d.innerHTML = h;
         }
 

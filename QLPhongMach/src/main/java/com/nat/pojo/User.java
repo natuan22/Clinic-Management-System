@@ -43,9 +43,22 @@ import org.springframework.web.multipart.MultipartFile;
     @NamedQuery(name = "User.findByEmail", query = "SELECT u FROM User u WHERE u.email = :email"),
     @NamedQuery(name = "User.findByPhone", query = "SELECT u FROM User u WHERE u.phone = :phone"),
     @NamedQuery(name = "User.findByAvatar", query = "SELECT u FROM User u WHERE u.avatar = :avatar"),
-    @NamedQuery(name = "User.findByUserRole", query = "SELECT u FROM User u WHERE u.userRole = :userRole"),
-    @NamedQuery(name = "User.findByIsSuperuser", query = "SELECT u FROM User u WHERE u.isSuperuser = :isSuperuser")})
+    @NamedQuery(name = "User.findByUserRole", query = "SELECT u FROM User u WHERE u.userRole = :userRole"),})
 public class User implements Serializable {
+
+    /**
+     * @return the oldPassword
+     */
+    public String getOldPassword() {
+        return oldPassword;
+    }
+
+    /**
+     * @param oldPassword the oldPassword to set
+     */
+    public void setOldPassword(String oldPassword) {
+        this.oldPassword = oldPassword;
+    }
 
     
     public static final String ADMIN = "ROLE_ADMIN";
@@ -111,10 +124,7 @@ public class User implements Serializable {
     @Size(min = 1, max = 45)
     @Column(name = "user_role")
     private String userRole;
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "is_superuser")
-    private boolean isSuperuser;
+    
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "userId")
     private Set<LichKhamBenh> lichKhamBenhSet;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "bacSiId")
@@ -123,6 +133,8 @@ public class User implements Serializable {
     private Set<PhieuKhamBenh> phieuKhamBenhSet1;
     @Transient
     private String confirmPassword;
+    @Transient
+    private String oldPassword;
     @Transient
     private MultipartFile file;
     
@@ -133,7 +145,7 @@ public class User implements Serializable {
         this.id = id;
     }
 
-    public User(Integer id, boolean active, String username, String password, String firstName, String lastName, String gioiTinh, String email, String phone, String userRole, boolean isSuperuser) {
+    public User(Integer id, boolean active, String username, String password, String firstName, String lastName, String gioiTinh, String email, String phone, String userRole) {
         this.id = id;
         this.active = active;
         this.username = username;
@@ -144,7 +156,6 @@ public class User implements Serializable {
         this.email = email;
         this.phone = phone;
         this.userRole = userRole;
-        this.isSuperuser = isSuperuser;
     }
 
     public Integer getId() {
@@ -233,14 +244,6 @@ public class User implements Serializable {
 
     public void setUserRole(String userRole) {
         this.userRole = userRole;
-    }
-
-    public boolean getIsSuperuser() {
-        return isSuperuser;
-    }
-
-    public void setIsSuperuser(boolean isSuperuser) {
-        this.isSuperuser = isSuperuser;
     }
 
     @XmlTransient

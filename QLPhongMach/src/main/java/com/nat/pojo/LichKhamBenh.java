@@ -36,7 +36,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 @NamedQueries({
     @NamedQuery(name = "LichKhamBenh.findAll", query = "SELECT l FROM LichKhamBenh l"),
     @NamedQuery(name = "LichKhamBenh.findById", query = "SELECT l FROM LichKhamBenh l WHERE l.id = :id"),
-    @NamedQuery(name = "LichKhamBenh.findByActive", query = "SELECT l FROM LichKhamBenh l WHERE l.active = :active"),
     @NamedQuery(name = "LichKhamBenh.findByCreatedDate", query = "SELECT l FROM LichKhamBenh l WHERE l.createdDate = :createdDate"),
     @NamedQuery(name = "LichKhamBenh.findByXacThuc", query = "SELECT l FROM LichKhamBenh l WHERE l.xacThuc = :xacThuc"),
     @NamedQuery(name = "LichKhamBenh.findByNgayKham", query = "SELECT l FROM LichKhamBenh l WHERE l.ngayKham = :ngayKham"),
@@ -50,10 +49,6 @@ public class LichKhamBenh implements Serializable {
     @Basic(optional = false)
     @Column(name = "id")
     private Integer id;
-    @Basic(optional = false)
-    @NotNull
-    @Column(name = "active")
-    private boolean active;
     @Column(name = "created_date")
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdDate;
@@ -91,9 +86,8 @@ public class LichKhamBenh implements Serializable {
         this.id = id;
     }
 
-    public LichKhamBenh(Integer id, boolean active, boolean xacThuc, Date ngayKham, Date gioKham, String trieuChung) {
+    public LichKhamBenh(Integer id, boolean xacThuc, Date ngayKham, Date gioKham, String trieuChung) {
         this.id = id;
-        this.active = active;
         this.xacThuc = xacThuc;
         this.ngayKham = ngayKham;
         this.gioKham = gioKham;
@@ -107,15 +101,7 @@ public class LichKhamBenh implements Serializable {
     public void setId(Integer id) {
         this.id = id;
     }
-
-    public boolean getActive() {
-        return active;
-    }
-
-    public void setActive(boolean active) {
-        this.active = active;
-    }
-
+    
     public Date getCreatedDate() {
         return createdDate;
     }

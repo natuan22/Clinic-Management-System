@@ -16,4 +16,6 @@ public interface ThuocService {
     List<Thuoc> getThuocs(Map<String, String> params, int page);
     boolean deleteThuoc(int id);
     boolean addThuoc(Thuoc t);
+    boolean editThuoc(Thuoc t, int id);
+    Thuoc getThuocById(int id);
 }

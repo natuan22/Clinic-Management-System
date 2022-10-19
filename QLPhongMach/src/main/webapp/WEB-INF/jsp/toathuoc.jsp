@@ -9,17 +9,20 @@
 
 <div class="container" style="margin-top: 20px;">
     <h1 class="text-center text-danger">TOA THUỐC</h1>
-    
+
     <div class="alert alert-info">
         <h5>Tổng số thuốc trong toa: <span id="cartCounter">${cartCounter}</span></h5>
+        
+        <input class="btn btn-danger" type="button" value="Xác nhận" onclick="QuayLai()">
+        
     </div>
-    
+
     <c:url value="/bacsi/kham-benh/${lichKhamBenhId}/toa-thuoc" var="action" />
     <form method="get" action="${action}" class="d-flex">
         <input class="form-control me-2" type="search" name="kw" placeholder="Tìm tên thuốc" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Tìm</button>
     </form>
-        <br>
+    <br>
     <table class="table">
         <tr>
             <th>Tên</th>
@@ -47,4 +50,9 @@
     </table>
 
     <script src="<c:url value="/js/cart.js" />"></script>
+    <script>
+        function QuayLai() {
+            window.history.back();
+        }
+    </script>
 </div>

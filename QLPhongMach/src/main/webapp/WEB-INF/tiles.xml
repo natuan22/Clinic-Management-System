@@ -20,78 +20,93 @@ Software Foundation//DTD Tiles Configuration 3.0//EN"
     </definition>
     
     <definition name="pageAdmin" extends="adminLayout">
-        <put-attribute name="title" value="Trang quản trị" />
+        <put-attribute name="title" value="Trang quản trị | QLPhongMach" />
         <put-attribute name="content" value="/WEB-INF/jsp/admin.jsp" />
     </definition>
     
     <definition name="stats" extends="adminLayout">
-        <put-attribute name="title" value="Thong ke bao cao" />
+        <put-attribute name="title" value="Thống kê báo cáo | QLPhongMach" />
         <put-attribute name="content"
                        value="/WEB-INF/jsp/stats.jsp" />
     </definition>
     
     <definition name="index" extends="baseLayout">
-        <put-attribute name="title" value="Trang chủ" />
+        <put-attribute name="title" value="Trang chủ | QLPhongMach" />
         <put-attribute name="content" value="/WEB-INF/jsp/index.jsp" />
     </definition>
     
+    <definition name="dichvu" extends="baseLayout">
+        <put-attribute name="title" value="Dịch vụ | QLPhongMach" />
+        <put-attribute name="content" value="/WEB-INF/jsp/dichvu.jsp" />
+    </definition>
+    
+    <definition name="doiMatKhau" extends="baseLayout">
+        <put-attribute name="title" value="Thay đổi mật khẩu | QLPhongMach" />
+        <put-attribute name="content" value="/WEB-INF/jsp/doiMatKhau.jsp" />
+    </definition>
+    
     <definition name="pageBacSi" extends="adminLayout">
-        <put-attribute name="title" value="Bac si" />
+        <put-attribute name="title" value="Bác sĩ | QLPhongMach" />
         <put-attribute name="content" value="/WEB-INF/jsp/bacsi.jsp" />
     </definition>
     
     <definition name="khamBenh" extends="adminLayout">
-        <put-attribute name="title" value="Bac si" />
+        <put-attribute name="title" value="Bác sĩ | QLPhongMach" />
         <put-attribute name="content" value="/WEB-INF/jsp/khambenh.jsp" />
     </definition>
     
     <definition name="login" extends="baseLayout">
-        <put-attribute name="title" value="Login" />
+        <put-attribute name="title" value="Đăng nhập | QLPhongMach" />
         <put-attribute name="content" value="/WEB-INF/jsp/login.jsp" />
     </definition>
     
     <definition name="register" extends="baseLayout">
-        <put-attribute name="title" value="Register" />
+        <put-attribute name="title" value="Đăng ký | QLPhongMach" />
         <put-attribute name="content" value="/WEB-INF/jsp/register.jsp" />
     </definition>
     
     <definition name="dangkykham" extends="baseLayout">
-        <put-attribute name="title" value="Dang ky kham benh" />
+        <put-attribute name="title" value="Đăng ký khám bệnh | QLPhongMach" />
         <put-attribute name="content" value="/WEB-INF/jsp/dangkykham.jsp" />
     </definition>
     
     <definition name="thuocs" extends="adminLayout">
-        <put-attribute name="title" value="Quan ly thuoc" />
+        <put-attribute name="title" value="Quản lý thuốc | QLPhongMach" />
         <put-attribute name="content" value="/WEB-INF/jsp/thuocs.jsp" />
     </definition>
     
     <definition name="pageYTa" extends="adminLayout">
-        <put-attribute name="title" value="Y ta" />
+        <put-attribute name="title" value="Y tá | QLPhongMach" />
         <put-attribute name="content" value="/WEB-INF/jsp/yta.jsp" />
     </definition>
     
     <definition name="thanhToanHoaDon" extends="adminLayout">
-        <put-attribute name="title" value="Y ta" />
+        <put-attribute name="title" value="Y tá | QLPhongMach" />
         <put-attribute name="content" value="/WEB-INF/jsp/thanh-toan-hoa-don.jsp" />
     </definition>
     
     <definition name="lichkham" extends="baseLayout">
-        <put-attribute name="title" value="Lich su kham benh" />
+        <put-attribute name="title" value="Lịch sử khám bệnh | QLPhongMach" />
         <put-attribute name="content" value="/WEB-INF/jsp/lichkham.jsp" />
     </definition>
     
     <definition name="toathuoc" extends="adminLayout">
-        <put-attribute name="title" value="Toa thuoc" />
+        <put-attribute name="title" value="Toa thuốc | QLPhongMach" />
         <put-attribute name="content" value="/WEB-INF/jsp/toathuoc.jsp" />
     </definition>
     
     <definition name="lichSuKhamBenh" extends="adminLayout">
-        <put-attribute name="title" value="Lich su kham benh" />
+        <put-attribute name="title" value="Lịch sử khám bệnh | QLPhongMach" />
         <put-attribute name="content" value="/WEB-INF/jsp/lich-su-kham-benh.jsp" />
     </definition>
     
     <definition name="lichSuKhamBenhToaThuocDetail" extends="adminLayout">
-        <put-attribute name="title" value="Lich su kham benh" />
+        <put-attribute name="title" value="Toa thuốc | QLPhongMach" />
         <put-attribute name="content" value="/WEB-INF/jsp/toa-thuoc-detail.jsp" />
+    </definition>
+    
+    <definition name="thuocDetail" extends="adminLayout">
+        <put-attribute name="title" value="Sửa thuốc | QLPhongMach" />
+        <put-attribute name="content" value="/WEB-INF/jsp/thuoc-detail.jsp" />
     </definition>
 </tiles-definitions>

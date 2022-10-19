@@ -13,4 +13,5 @@ import java.util.List;
  */
 public interface DichVuBenhVienService {
     List<DichVuBenhVien> getDichVuBenhViens();
+    DichVuBenhVien getDichVuBenhVienById(int id);
 }

@@ -38,7 +38,6 @@ import javax.xml.bind.annotation.XmlTransient;
 @NamedQueries({
     @NamedQuery(name = "PhieuKhamBenh.findAll", query = "SELECT p FROM PhieuKhamBenh p"),
     @NamedQuery(name = "PhieuKhamBenh.findById", query = "SELECT p FROM PhieuKhamBenh p WHERE p.id = :id"),
-    @NamedQuery(name = "PhieuKhamBenh.findByActive", query = "SELECT p FROM PhieuKhamBenh p WHERE p.active = :active"),
     @NamedQuery(name = "PhieuKhamBenh.findByNgayKham", query = "SELECT p FROM PhieuKhamBenh p WHERE p.ngayKham = :ngayKham"),
     @NamedQuery(name = "PhieuKhamBenh.findByTrieuChung", query = "SELECT p FROM PhieuKhamBenh p WHERE p.trieuChung = :trieuChung"),
     @NamedQuery(name = "PhieuKhamBenh.findByKetLuan", query = "SELECT p FROM PhieuKhamBenh p WHERE p.ketLuan = :ketLuan")})
@@ -53,8 +52,6 @@ public class PhieuKhamBenh implements Serializable {
     @Basic(optional = false)
     @Column(name = "id")
     private Integer id;
-    @Column(name = "active")
-    private Boolean active;
     @Basic(optional = false)
     @NotNull
     @Column(name = "ngay_kham")
@@ -98,14 +95,6 @@ public class PhieuKhamBenh implements Serializable {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Boolean getActive() {
-        return active;
-    }
-
-    public void setActive(Boolean active) {
-        this.active = active;
     }
 
     public Date getNgayKham() {

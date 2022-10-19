@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/JavaScript.js to edit this template
  */
 function deleteThuoc(endpoint, id, btn) {
-    if (confirm("Ban chac chan xoa thuoc nay khong?") === true) {
+    if (confirm("Bạn có chắc chắn xoá thuốc này không?") === true) {
         let r = document.getElementById(`row${id}`);
         let load = document.getElementById(`load${id}`);
         load.style.display = "block";
@@ -24,7 +24,7 @@ function deleteThuoc(endpoint, id, btn) {
     
 }
 
-function getThuocs(endpoint) {
+function getThuocs(endpoint, edit) {
     fetch(endpoint).then(function (res) {
         return res.json();
     }).then(function (data) {
@@ -40,7 +40,10 @@ function getThuocs(endpoint) {
                     <td>${data[i].ghiChu}</td>
                     <td>
                         <div class="spinner-border text-info" style="display:none" id="load${data[i].id}"></div>
-                        <button class="btn btn-danger" onclick="deleteThuoc('${endpoint + "/" + data[i].id}', ${data[i].id}, this)">Xoá</button>
+                        <button class="btn btn-danger" onclick="deleteThuoc('${endpoint + data[i].id}', ${data[i].id}, this)">Xoá</button>
+                    </td>
+                    <td>
+                        <a class="btn btn-danger" href="${edit + data[i].id}">Sửa</a>
                     </td>
                 </tr>
             `

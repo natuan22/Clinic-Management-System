@@ -35,4 +35,14 @@ public class ThuocServiceImpl implements ThuocService {
     public boolean addThuoc(Thuoc t) {
         return this.thuocRepository.addThuoc(t);
     }
+
+    @Override
+    public Thuoc getThuocById(int id) {
+        return this.thuocRepository.getThuocById(id);
+    }
+
+    @Override
+    public boolean editThuoc(Thuoc t, int id) {
+        return this.thuocRepository.editThuoc(t, id);
+    }
 }

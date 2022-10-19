@@ -33,7 +33,7 @@ public class ApiCartController {
     
     @PostMapping("/cart")
     public int addToCart(@RequestBody Cart params, HttpSession session) {
-        Map<Integer, Cart> cart = (Map<Integer, Cart>) session.getAttribute("cart");
+    Map<Integer, Cart> cart = (Map<Integer, Cart>) session.getAttribute("cart");
         if (cart == null)
             cart = new HashMap<>();
         

@@ -37,6 +37,12 @@
         <span class="visually-hidden">Next</span>
     </button>
 </div>
-
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+<script>
+    <c:if test="${successMsg != null}">
+        alertify.set('notifier', 'position', 'top-right');
+        alertify.success('${successMsg}');
+    </c:if>
+</script>
 
 

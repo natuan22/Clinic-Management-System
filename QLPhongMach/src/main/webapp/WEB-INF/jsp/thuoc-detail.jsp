@@ -1,31 +1,33 @@
 <%-- 
-    Document   : thuocs
-    Created on : Aug 4, 2022, 4:16:34 PM
+    Document   : toa-thuoc-detail
+    Created on : Aug 17, 2022, 1:20:36 PM
     Author     : anhtuan
 --%>
 
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <div class="container" style="margin-top: 20px;">
-    <h1 class="text-center text-danger">QUẢN LÝ THUỐC</h1>
+    <h1 class="text-danger text-center">CHI TIẾT THUỐC ${thuoc.ten}</h1>
 
-    <c:url value="/admin/thuocs" var="action" />
-    <form:form method="post" action="${action}" modelAttribute="thuoc">
-
+    <c:url value="/admin/thuocs/${thuoc.id}" var="action" />
+    <form:form method="post" action="${action}" modelAttribute="thuocEdit">
         <div class="form-floating mb-3 mt-3">
-            <form:input type="text" path="ten" class="form-control" id="ten" placeholder="ten" name="ten" />
-            <label for="ten">Tên thuốc</label>
+            <form:input type="text" path="ten" class="form-control" id="ten" placeholder="ten" name="ten"
+                        value="${thuoc.ten}"/>
+            <label for="ten">Tên</label>
             <form:errors path="ten" element="div" cssClass="text-danger mb-2 mt-2" />
         </div>
         <div class="form-floating mb-3 mt-3">
-            <form:input type="number" min="0" path="soLuong" class="form-control" id="soLuong" placeholder="soLuong" name="soLuong" />
+            <form:input type="number" min="0" path="soLuong" class="form-control" id="soLuong" placeholder="soLuong" name="soLuong"
+                        value="${thuoc.soLuong}"/>
             <label for="soLuong">Số lượng</label>
             <form:errors path="soLuong" element="div" cssClass="text-danger mb-2 mt-2" />
         </div>
         <div class="form-floating mb-3 mt-3">
-            <form:input type="number" min="0" path="donGia" class="form-control" id="donGia" placeholder="donGia" name="donGia" />
+            <form:input type="number" min="0" path="donGia" class="form-control" id="donGia" placeholder="donGia" name="donGia"
+                        value="${thuoc.donGia}"/>
             <label for="donGia">Đơn giá</label>
             <form:errors path="donGia" element="div" cssClass="text-danger mb-2 mt-2" />
         </div>
@@ -52,38 +54,16 @@
                     <form:errors path="danhMucId" element="div" cssClass="text-danger mb-2 mt-2" />
                 </div>
             </div>
-        </div>
+        </div>   
         <div class="form-floating mb-3 mt-3">
-            <form:textarea style="height: 100px" type="text" path="ghiChu" class="form-control" id="ghiChu" placeholder="ghiChu" name="ghiChu" />
+            <form:textarea style="height: 100px" type="text" path="ghiChu" 
+                           class="form-control" id="ghiChu" placeholder="ghiChu" 
+                           name="ghiChu" value="${thuoc.ghiChu}"/>
             <label for="ghiChu">Ghi chú</label>
             <form:errors path="ghiChu" element="div" cssClass="text-danger mb-2 mt-2" />
         </div>
         <div>
-            <input type="submit" value="Thêm thuốc" class="btn btn-danger" />
+            <input type="submit" value="Sửa thuốc" class="btn btn-danger" />
         </div>
     </form:form>
-    <hr>
-    <div class="spinner-border text-success" id="mySpinner"></div>
-    <table class="table">
-        <tr>
-            <th>Tên</th>
-            <th>Đơn giá</th>
-            <th>Số lượng</th>
-            <th>Ghi chú</th>
-            <th></th>
-            <th></th>
-        </tr>
-        <tbody id="myThuoc">
-
-        </tbody>
-    </table>
-
-    <script src="<c:url value="/js/thuocs.js" />"></script>
-    <script>
-        <c:url value="/api/thuocs/" var="u" />
-        <c:url value="/admin/thuocs/" var="edit" />
-        window.onload = function () {
-            getThuocs('${u}', '${edit}');
-        }
-    </script>
 </div>

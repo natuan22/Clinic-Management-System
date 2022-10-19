@@ -32,7 +32,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NamedQueries({
     @NamedQuery(name = "HoaDon.findAll", query = "SELECT h FROM HoaDon h"),
     @NamedQuery(name = "HoaDon.findById", query = "SELECT h FROM HoaDon h WHERE h.id = :id"),
-    @NamedQuery(name = "HoaDon.findByActive", query = "SELECT h FROM HoaDon h WHERE h.active = :active"),
     @NamedQuery(name = "HoaDon.findByNgayTao", query = "SELECT h FROM HoaDon h WHERE h.ngayTao = :ngayTao"),
     @NamedQuery(name = "HoaDon.findByThanhTien", query = "SELECT h FROM HoaDon h WHERE h.thanhTien = :thanhTien"),
     @NamedQuery(name = "HoaDon.findByTinhTrang", query = "SELECT h FROM HoaDon h WHERE h.tinhTrang = :tinhTrang")})
@@ -44,8 +43,6 @@ public class HoaDon implements Serializable {
     @Basic(optional = false)
     @Column(name = "id")
     private Integer id;
-    @Column(name = "active")
-    private Boolean active;
     @Basic(optional = false)
     @NotNull
     @Column(name = "ngay_tao")
@@ -83,14 +80,6 @@ public class HoaDon implements Serializable {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Boolean getActive() {
-        return active;
-    }
-
-    public void setActive(Boolean active) {
-        this.active = active;
     }
 
     public Date getNgayTao() {

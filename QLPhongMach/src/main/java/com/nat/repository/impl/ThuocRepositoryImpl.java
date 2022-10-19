@@ -7,6 +7,7 @@ package com.nat.repository.impl;
 import com.nat.pojo.Thuoc;
 import com.nat.repository.ThuocRepository;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import javax.persistence.Query;
@@ -96,7 +97,11 @@ public class ThuocRepositoryImpl implements ThuocRepository {
     public boolean addThuoc(Thuoc t) {
         Session session = this.sessionFactory.getObject().getCurrentSession();
         try {
+            t.setActive(true);
+            t.setCreatedDate(new Date());
+            
             session.save(t);
+            
             return true;
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -108,5 +113,28 @@ public class ThuocRepositoryImpl implements ThuocRepository {
     public Thuoc getThuocById(int id) {
         Session session = this.sessionFactory.getObject().getCurrentSession();
         return session.get(Thuoc.class, id);
+    }
+
+    @Override
+    public boolean editThuoc(Thuoc t, int id) {
+        Session session = this.sessionFactory.getObject().getCurrentSession();
+        
+        try {
+            Thuoc p = session.get(Thuoc.class, id);
+            p.setTen(t.getTen());
+            p.setSoLuong(t.getSoLuong());
+            p.setDonGia(t.getDonGia());
+            p.setDanhMucId(t.getDanhMucId());
+            p.setDonViTinhId(t.getDonViTinhId());
+            p.setGhiChu(t.getGhiChu());
+            p.setCreatedDate(new Date());
+            
+            session.save(p);
+            
+            return true;
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            return false;
+        }
     }
 }

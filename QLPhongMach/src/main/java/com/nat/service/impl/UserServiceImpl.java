@@ -43,6 +43,7 @@ public class UserServiceImpl implements UserService {
             String password = user.getPassword();
             user.setPassword(this.passwordEncoder.encode(password));
             user.setUserRole(User.USER);
+            user.setActive(true);
             
             Map r = this.cloudinary.uploader().upload(user.getFile().getBytes(),
                     ObjectUtils.asMap("resource_type", "auto"));
@@ -73,5 +74,10 @@ public class UserServiceImpl implements UserService {
         auth.add(new SimpleGrantedAuthority(user.getUserRole()));
 
         return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), auth);
+    }
+
+    @Override
+    public boolean changePass(User user, int id) {
+        return this.userRepository.changePass(user, id);
     }
 }

@@ -16,6 +16,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -38,8 +39,10 @@ public class ToaThuocDetail implements Serializable {
     @Basic(optional = false)
     @Column(name = "id")
     private Integer id;
+    @NotNull
     @Column(name = "so_luong")
     private Integer soLuong;
+    @NotNull
     @Column(name = "don_gia")
     private Long donGia;
     @JoinColumn(name = "thuoc_id", referencedColumnName = "id")

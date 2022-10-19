@@ -14,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -54,6 +55,26 @@ public class AdminController {
         }
 
         return "thuocs";
+    }
+    
+    @GetMapping("/thuocs/{thuocId}")
+    public String list(Model model, @PathVariable(value = "thuocId") int id) {
+        model.addAttribute("thuocEdit", new Thuoc());
+        model.addAttribute("thuoc", this.thuocService.getThuocById(id));
+        
+        return "thuocDetail";
+    }
+    
+    @PostMapping("/thuocs/{thuocId}")
+    public String edit(@PathVariable(value = "thuocId") int id, 
+            @ModelAttribute(value = "thuocEdit") @Valid Thuoc thuoc, BindingResult rs) {
+        if (!rs.hasErrors()) {
+            if (this.thuocService.editThuoc(thuoc, id) == true) {
+                return "redirect:/admin/thuocs";
+            }
+        }
+        
+        return "thuocDetail";
     }
 
     @GetMapping("/stats")

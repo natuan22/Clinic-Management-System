@@ -22,6 +22,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
@@ -35,7 +36,6 @@ import javax.xml.bind.annotation.XmlTransient;
 @NamedQueries({
     @NamedQuery(name = "ToaThuoc.findAll", query = "SELECT t FROM ToaThuoc t"),
     @NamedQuery(name = "ToaThuoc.findById", query = "SELECT t FROM ToaThuoc t WHERE t.id = :id"),
-    @NamedQuery(name = "ToaThuoc.findByActive", query = "SELECT t FROM ToaThuoc t WHERE t.active = :active"),
     @NamedQuery(name = "ToaThuoc.findByCreatedDate", query = "SELECT t FROM ToaThuoc t WHERE t.createdDate = :createdDate"),
     @NamedQuery(name = "ToaThuoc.findByTongTien", query = "SELECT t FROM ToaThuoc t WHERE t.tongTien = :tongTien")})
 public class ToaThuoc implements Serializable {
@@ -49,11 +49,11 @@ public class ToaThuoc implements Serializable {
     @Basic(optional = false)
     @Column(name = "id")
     private Integer id;
-    @Column(name = "active")
-    private Boolean active;
+    @NotNull
     @Column(name = "created_date")
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdDate;
+    @NotNull
     @Column(name = "tong_tien")
     private Long tongTien;
     @JsonIgnore
@@ -75,14 +75,6 @@ public class ToaThuoc implements Serializable {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Boolean getActive() {
-        return active;
-    }
-
-    public void setActive(Boolean active) {
-        this.active = active;
     }
 
     public Date getCreatedDate() {
