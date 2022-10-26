@@ -11,7 +11,7 @@ Sử dụng các công nghệ: Spring MVC, Hibernate và hệ cơ sở dữ li�
 
 * Tải và cài đặt [Tomcat Server](https://tomcat.apache.org/download-10.cgi)
 
-* Clone/[Download](https://github.com/natuan22/Clinic-Management-System/archive/refs/heads/main.zip)
+* Clone/[Download](https://github.com/natuan22/Clinic-Management-System/archive/refs/heads/main.zip) project
 
 * Mở MySQL Workbench tạo schema mới 
 
