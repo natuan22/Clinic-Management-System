@@ -22,9 +22,9 @@ Sử dụng các công nghệ: Spring MVC, Hibernate và hệ cơ sở dữ li�
 * Vào file **database.properties** chỉnh sửa thông tin account mysql và cơ sở dữ liệu tạo phía trên [Setup database](QLPhongMach/src/main/resources/databases.properties)
 
 ```bash
-hibernate.connection.url=jdbc:mysql://localhost:3306/***
+hibernate.connection.url=jdbc:mysql://localhost:3306/****
 hibernate.connection.username=root
-hibernate.connection.password=***
+hibernate.connection.password=****
 ```
 
 * Chuột phải project chọn `Clean and Build` project hoặc `Shift+F11`
