@@ -17,7 +17,7 @@ Sử dụng các công nghệ: Spring MVC, Hibernate và hệ cơ sở dữ li�
 
 * Mở Netbean File > Open Project chọn project QLPhongMach mới tải về
 
-* Vào file **database.properties** chỉnh sửa thông tin account mysql và cơ sở dữ liệu tạo phía trên [Setup database](src/main/resources/databases.properties)
+* Vào file **database.properties** chỉnh sửa thông tin account mysql và cơ sở dữ liệu tạo phía trên [Setup database](QLPhongMach/src/main/resources/databases.properties)
 
 ```bash
 hibernate.dialect=org.hibernate.dialect.MySQLDialect
