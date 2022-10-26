@@ -36,7 +36,7 @@ hibernate.connection.password=anhtuan222001
 * Role admin: username: admin
 * Role bác sĩ: username: bacsi
 * Role y tá: username: yta 
-*`Tất cả mật khẩu là 1`
+* `Tất cả mật khẩu là 1`
 ## 🎁 Giao diện hệ thống
 
 * Trang chủ
