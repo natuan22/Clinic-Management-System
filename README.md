@@ -31,4 +31,17 @@ hibernate.connection.password=anhtuan222001
 
 * Sau khi build xong thì chuột phải project chọn `Run` hoặc `F6`
 
+## 🚀 Tài khoản test hệ thống
 
+Role admin: username: admin 
+	         password: 1
+Role bác sĩ: username: bacsi 
+	         password: 1
+Role y tá: username: yta 
+	     password: 1
+
+## 🎁 Giao diện hệ thống
+
+* Trang chủ
+
+![image](https://res.cloudinary.com/dhldfozup/image/upload/v1666789541/QLPhongMach/screencapture-localhost-8080-QLPhongMach-2022-10-16-22_40_43_utqtkh.png)
