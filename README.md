@@ -31,24 +31,23 @@ hibernate.connection.password=anhtuan222001
 
 * Sau khi build xong thì chuột phải project chọn `Run` hoặc `F6`
 
-## 🚀 Tài khoản test hệ thống
+## 🚀 Tài khoản test trong hệ thống
 
-* Role admin: username: admin 
-	            password: 1
-* Role bác sĩ: username: bacsi 
-	            password: 1
+* Role admin: username: admin
+* Role bác sĩ: username: bacsi
 * Role y tá: username: yta 
-	         password: 1
-
+`Tất cả mật khẩu là 1`
 ## 🎁 Giao diện hệ thống
 
 * Trang chủ
 
 ![image](https://res.cloudinary.com/dhldfozup/image/upload/v1666789541/QLPhongMach/screencapture-localhost-8080-QLPhongMach-2022-10-16-22_40_43_utqtkh.png)
+
 <details>
-<summary>See more screenshots</summary>
-<img src="https://i.imgur.com/GhzLBSr.png" alt="battlepass">
-<img src="https://i.imgur.com/f0gXUoo.png" alt="nightmarket">
-<img src="https://i.imgur.com/Q7q6tUU.png" alt="missions">
-<img src="https://i.imgur.com/5jEZt3Z.png" alt="points">
+<summary>Một số giao diện khác</summary>
+<img src="https://res.cloudinary.com/dhldfozup/image/upload/v1666789535/QLPhongMach/screencapture-localhost-8080-QLPhongMach-dang-ky-kham-2022-10-16-22_42_50_c3qq0f.png" alt="dangKyKhamBenh">
+<img src="https://res.cloudinary.com/dhldfozup/image/upload/v1666789534/QLPhongMach/screencapture-localhost-8080-QLPhongMach-bacsi-kham-benh-149-2022-10-16-22_46_40_ky6byg.png" alt="khamBenh">
+<img src="https://res.cloudinary.com/dhldfozup/image/upload/v1666789537/QLPhongMach/screencapture-localhost-8080-QLPhongMach-admin-2022-10-16-22_54_42_rezqn4.png" alt="thongKeThuoc">
+<img src="https://res.cloudinary.com/dhldfozup/image/upload/v1666789537/QLPhongMach/screencapture-localhost-8080-QLPhongMach-admin-stats-2022-10-16-22_54_56_pnqo2g.png" alt="thongKeBaoCao">
+<img src="https://res.cloudinary.com/dhldfozup/image/upload/v1666789533/QLPhongMach/screencapture-localhost-8080-QLPhongMach-admin-thuocs-2022-10-16-22_54_09_pxrzoq.png" alt="quanLyThuoc">
 </details>
