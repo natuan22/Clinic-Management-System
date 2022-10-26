@@ -5,11 +5,11 @@ Sử dụng các công nghệ: Spring MVC, Hibernate và hệ cơ sở dữ li�
 
 ## 📦 Cài đặt
 
-* [Apache Netbean IDE](https://netbeans.apache.org/download/index.html)
+* Tải và cài đặt [Apache Netbean IDE](https://netbeans.apache.org/download/index.html)
 
-* [MySQL](https://www.mysql.com/downloads/)
+* Tải và cài đặt [MySQL](https://www.mysql.com/downloads/)
 
-* [Tomcat Server](https://tomcat.apache.org/download-10.cgi)
+* Tải và cài đặt [Tomcat Server](https://tomcat.apache.org/download-10.cgi)
 
 * Clone/[Download](https://github.com/natuan22/Clinic-Management-System/archive/refs/heads/main.zip)
 
