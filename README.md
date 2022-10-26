@@ -43,11 +43,23 @@ hibernate.connection.password=anhtuan222001
 
 ![image](https://res.cloudinary.com/dhldfozup/image/upload/v1666789541/QLPhongMach/screencapture-localhost-8080-QLPhongMach-2022-10-16-22_40_43_utqtkh.png)
 
+* Đăng ký khám bệnh
+
+![image](https://res.cloudinary.com/dhldfozup/image/upload/v1666789535/QLPhongMach/screencapture-localhost-8080-QLPhongMach-dang-ky-kham-2022-10-16-22_42_50_c3qq0f.png)
+
+* Khám bệnh
+
+![image](https://res.cloudinary.com/dhldfozup/image/upload/v1666789534/QLPhongMach/screencapture-localhost-8080-QLPhongMach-bacsi-kham-benh-149-2022-10-16-22_46_40_ky6byg.png)
+
+* Thống kê báo cáo
+
+![image](https://res.cloudinary.com/dhldfozup/image/upload/v1666789537/QLPhongMach/screencapture-localhost-8080-QLPhongMach-admin-stats-2022-10-16-22_54_56_pnqo2g.png)
+
 <details>
 <summary>Một số giao diện khác</summary>
-<img src="https://res.cloudinary.com/dhldfozup/image/upload/v1666789535/QLPhongMach/screencapture-localhost-8080-QLPhongMach-dang-ky-kham-2022-10-16-22_42_50_c3qq0f.png" alt="dangKyKhamBenh">
-<img src="https://res.cloudinary.com/dhldfozup/image/upload/v1666789534/QLPhongMach/screencapture-localhost-8080-QLPhongMach-bacsi-kham-benh-149-2022-10-16-22_46_40_ky6byg.png" alt="khamBenh">
+<img src="https://res.cloudinary.com/dhldfozup/image/upload/v1666789535/QLPhongMach/screencapture-localhost-8080-QLPhongMach-yta-2022-10-16-22_52_06_fehvxg.png" alt="xacNhanThuoc">
+<img src="https://res.cloudinary.com/dhldfozup/image/upload/v1666789537/QLPhongMach/screencapture-localhost-8080-QLPhongMach-yta-thanh-toan-2022-10-16-22_53_01_ssnwyr.png" alt="quanLyHoaDon">
 <img src="https://res.cloudinary.com/dhldfozup/image/upload/v1666789537/QLPhongMach/screencapture-localhost-8080-QLPhongMach-admin-2022-10-16-22_54_42_rezqn4.png" alt="thongKeThuoc">
-<img src="https://res.cloudinary.com/dhldfozup/image/upload/v1666789537/QLPhongMach/screencapture-localhost-8080-QLPhongMach-admin-stats-2022-10-16-22_54_56_pnqo2g.png" alt="thongKeBaoCao">
+<img src="https://res.cloudinary.com/dhldfozup/image/upload/v1666789536/QLPhongMach/screencapture-localhost-8080-QLPhongMach-bacsi-lich-su-kham-benh-6-2022-10-16-22_51_31_sarv9l.png" alt="lichSuKhamBenh">
 <img src="https://res.cloudinary.com/dhldfozup/image/upload/v1666789533/QLPhongMach/screencapture-localhost-8080-QLPhongMach-admin-thuocs-2022-10-16-22_54_09_pxrzoq.png" alt="quanLyThuoc">
 </details>
