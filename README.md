@@ -9,7 +9,9 @@ Sử dụng các công nghệ: Spring MVC, Hibernate và hệ cơ sở dữ li�
 
 * [MySQL](https://www.mysql.com/downloads/)
 
-* Clone/[Download][ZipDownload]
+* [Tomcat Server](https://tomcat.apache.org/download-10.cgi)
+
+* Clone/[Download]
 
 * Mở MySQL Workbench tạo schema mới 
 
@@ -20,13 +22,13 @@ Sử dụng các công nghệ: Spring MVC, Hibernate và hệ cơ sở dữ li�
 * Vào file **database.properties** chỉnh sửa thông tin account mysql và cơ sở dữ liệu tạo phía trên [Setup database](QLPhongMach/src/main/resources/databases.properties)
 
 ```bash
-hibernate.dialect=org.hibernate.dialect.MySQLDialect
-hibernate.showSql=true
-hibernate.connection.driverClass=com.mysql.cj.jdbc.Driver
 hibernate.connection.url=jdbc:mysql://localhost:3306/qlphongmach
 hibernate.connection.username=root
 hibernate.connection.password=anhtuan222001
 ```
 
+* Chuột phải project chọn `Clean and Build` project hoặc `Shift+F11`
+
+* Sau khi build xong thì chuột phải project chọn `Run` hoặc `F6`
 
 
