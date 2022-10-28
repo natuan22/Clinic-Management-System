@@ -22,7 +22,7 @@
     </c:if>
 
     <c:url value="/login" var="action"/>
-    <form method="post" action="${action}">
+    <form method="post" action="${action}" style="width: 60%; margin: auto;">
         <div class="form-floating mb-3 mt-3">
             <input class="form-control" type="text" id="username" name="username" placeholder="username" required/>
             <label for="username">Tên đăng nhập</label>

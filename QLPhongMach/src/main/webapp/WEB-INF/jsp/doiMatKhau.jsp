@@ -12,7 +12,7 @@
     <h1 class="text-center text-danger">THAY ĐỔI MẬT KHẨU ĐĂNG NHẬP</h1>
 
     <c:url value="/tai-khoan/mat-khau" var="action"/>
-    <form:form method="post" action="${action}" modelAttribute="user">
+    <form:form method="post" action="${action}" modelAttribute="user" style="width: 70%; margin: auto;">
         <div class="form-floating mb-3 mt-3">
             <form:input type="text" id="username" path="username" class="form-control" placeholder="username"
                         value="${currentUser.username}" readonly="true"/>

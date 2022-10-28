@@ -14,7 +14,7 @@
     <h1 class="text-center text-danger">ĐĂNG KÝ KHÁM BỆNH</h1>
 
     <c:url value="/dang-ky-kham" var="action"/>
-    <form:form method="post" action="${action}" modelAttribute="lichKhamBenh">
+    <form:form method="post" action="${action}" modelAttribute="lichKhamBenh" style="width: 60%; margin: auto;">
         <form:errors path="*" element="div" cssClass="alert alert-danger"/>
 
         <div class="form-group mb-3 mt-3">

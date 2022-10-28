@@ -44,10 +44,13 @@ public class UserServiceImpl implements UserService {
             user.setPassword(this.passwordEncoder.encode(password));
             user.setUserRole(User.USER);
             user.setActive(true);
-            
-            Map r = this.cloudinary.uploader().upload(user.getFile().getBytes(),
+            if (user.getFile().isEmpty())
+                user.setAvatar("https://res.cloudinary.com/dhldfozup/image/upload/v1666959446/QLPhongMach/f1_skho6v.jpg");
+            else {
+                Map r = this.cloudinary.uploader().upload(user.getFile().getBytes(),
                     ObjectUtils.asMap("resource_type", "auto"));
-            user.setAvatar((String) r.get("secure_url"));
+                user.setAvatar((String) r.get("secure_url"));
+            }
             
             return this.userRepository.addUser(user);
         } catch (IOException ex) {

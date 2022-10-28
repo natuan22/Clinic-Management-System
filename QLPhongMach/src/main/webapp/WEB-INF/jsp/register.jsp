@@ -18,7 +18,7 @@
     </c:if>
 
     <c:url value="/register" var="action"/>
-    <form:form method="post" action="${action}" enctype="multipart/form-data" modelAttribute="user">
+    <form:form method="post" action="${action}" enctype="multipart/form-data" modelAttribute="user" style="width: 60%; margin: auto;">
         <div class="row g-2">
             <div class="col-md">
                 <div class="form-floating mt-3">
